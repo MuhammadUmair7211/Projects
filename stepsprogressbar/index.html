@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steps Progress Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-color: #fff;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 100px;
+        }
+        .stepper-item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .stepper-item.complete .step-counter{
+            background-color: #4bb543;
+        }
+        .stepper-item.complete::after{
+            background-color: #4bb543;
+        }
+        .stepper-item.active .step-counter{
+            background-color: darkblue;
+            color: #fff;
+        }
+        .step-name{
+            margin-top: 2rem;
+        }
+        .step-counter{
+            background-color: #ccc;
+            width: 20px;
+            padding: 0.5rem;
+            border-radius: 50%;
+            text-align: center;
+        }
+        .stepper-item::after{
+            content: '';
+            background-color: #ccc;
+            width: 15rem;
+            height: 5px;
+            position: absolute;
+            top: 1rem;
+            left: 50px;
+            z-index: -1;
+
+        }
+        .stepper-item:last-child::after{
+            content: none;
+        }
+        @media (max-width: 767px) {
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="stepper-item complete">
+            <div class="step-counter">1</div>
+            <div class="step-name">Select Item</div>
+        </div>
+        <div class="stepper-item complete">
+            <div class="step-counter">2</div>
+            <div class="step-name">Add to Cart</div>
+        </div>
+        <div class="stepper-item active">
+            <div class="step-counter">3</div>
+            <div class="step-name">Make Payment</div>
+        </div>
+        <div class="stepper-item">
+            <div class="step-counter">4</div>
+            <div class="step-name">Payment Details</div>
+        </div>
+        <div class="stepper-item">
+            <div class="step-counter">5</div>
+            <div class="step-name">Download Receipt</div>
+        </div>
+    </div>
+</body>
+</html>

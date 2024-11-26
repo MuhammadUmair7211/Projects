@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+        }
+        video{
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+        }
+        .background-video
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(30%);
+        }
+        .header{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            color: #fff;
+            font-size: 3rem;
+            letter-spacing: 1rem;
+            margin-top: 5rem;
+        }
+        button{
+            position: absolute;
+            top: 70%;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #fff;
+            background-color: #666;
+            padding: 0.2rem 1rem;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <video muted autoplay loop src="background-video.mp4" class="background-video"></video>
+        <h1>Muhammad Umair</h1>
+        <button class="btn">
+        <i class="fa fa-pause" aria-hidden="true"></i>
+        </button>
+    </div>
+       <script>
+
+
+        let fa = document.querySelector(".fa");
+        let video = document.querySelector(".background-video");
+        let btn = document.querySelector(".btn")
+
+        btn.addEventListener("click", function(){
+            if(btn.classList.contains("pause")){
+                btn.classList.remove("pause")
+                video.play();
+                fa.classList.add("fa-pause");
+                fa.classList.remove("fa-play")
+            }else{
+                btn.classList.add("pause");
+                video.pause();
+                fa.classList.remove("fa-pause");
+                fa.classList.add("fa-play")
+            }
+        })
+       </script>
+</body>
+</html>
