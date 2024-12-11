@@ -1,0 +1,35 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--backround-color);
+    color: var(--text-color);
+    --backround-color: white;
+    --text-color: black;
+    --elements-color: white;
+}
+
+body.dark {
+    --backround-color: hsl(207, 26%, 17%);
+    --text-color: white;
+    --elements-color: hsl(209, 23%, 22%);
+}
+
+.navbar {
+    cursor: pointer;
+    background-color: var(--elements-color);
+}
+
+.container {
+    background-color: var(--backround-color);
+    color: var(--text-color);
+}
+
+main a {
+    background-color: var(--backround-color);
+    color: var(--text-color);
+}
+
+.border-countries {
+    background-color: var(--backround-color);
+    color: var(--text-color);
+}
