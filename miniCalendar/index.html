@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0px;
+            font-family: 'Nunito';
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendar {
+            margin: 1rem;
+            display: flex;
+            width: 500px;
+            height: 300px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            border-radius: 10px;
+        }
+
+        .date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: pink;
+            flex: 1;
+            height: 100%;
+        }
+
+        .month {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(255, 51, 0);
+            color: white;
+            flex: 1;
+            height: 100%;
+        }
+
+        .date-number {
+            font-size: 5rem;
+        }
+
+        .day {
+            font-size: 2rem;
+        }
+
+        .month-name {
+            font-size: 2.5rem;
+        }
+
+        .year {
+            font-size: 2rem;
+        }
+
+        @media (max-width:250px) {
+            .date-number {
+                font-size: 3rem;
+            }
+
+            .month-name {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calendar">
+        <div class="date">
+            <h1 class="date-number">12</h1>
+            <h2 class="day">Monday</h2>
+        </div>
+        <div class="month">
+            <h1 class="month-name">February</h1>
+            <h2 class="year">2022</h2>
+        </div>
+    </div>
+
+
+    <script>
+        let weekDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        let monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        let dateNumber = document.querySelector('.date-number')
+        let day = document.querySelector('.day')
+        let monthName = document.querySelector('.month-name')
+        let year = document.querySelector('.year')
+        let date = new Date();
+        dateNumber.innerHTML = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+        day.innerHTML = weekDays[date.getDay() - 1];
+        monthName.innerHTML = monthNames[date.getMonth()];
+        year.innerHTML = date.getFullYear()
+    </script>
+</body>
+
+</html>
